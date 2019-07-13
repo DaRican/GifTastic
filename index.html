@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GifTastic</title>
+    <style type="text/css">
+        button,
+        div,
+        form,
+        input {
+            margin: 10px;
+        }
+    </style>
+
+    <script type="text/javascript" src='assets/javascript/app.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Movie Search</h1>
+
+        <!-- Rendered Buttons will get Dumped Here  -->
+        <div id="buttons-view"></div>
+
+        <form id="movie-form">
+            <label for="pic-input">Picture Search</label>
+            <input type="text" id="pic-input"><br>
+
+            <!-- Button triggers new movie to be added -->
+            <input id="add-pic" type="submit" value="Picture Search">
+        </form>
+
+        <!-- Movies will Get Dumped Here -->
+        <div id="pics-view"></div>
+
+
+
+
+    </div>
+</body>
+
+</html>
