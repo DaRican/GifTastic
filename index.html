@@ -13,28 +13,32 @@
         }
     </style>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <script type="text/javascript" src='assets/javascript/app.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
 
     <div class="container">
-        <h1>Movie Search</h1>
+        <h1>90s Cartoons</h1>
 
         <!-- Rendered Buttons will get Dumped Here  -->
         <div id="buttons-view"></div>
 
-        <form id="movie-form">
-            <label for="pic-input">Picture Search</label>
-            <input type="text" id="pic-input"><br>
+        <form id="cartoon-form">
+            <label for="cartoon-input">Add a 90s Cartoon</label>
+            <input type="text" id="cartoon-input">
+            <br>
 
-            <!-- Button triggers new movie to be added -->
-            <input id="add-pic" type="submit" value="Picture Search">
+            <!-- Button triggers new cartoon to be added -->
+            <input id="add-cartoon" type="submit" value="Add a 90s Cartoon">
         </form>
 
-        <!-- Movies will Get Dumped Here -->
-        <div id="pics-view"></div>
+        <!-- Cartoons will Get Dumped Here -->
+        <div id="cartoons-view"></div>
 
 
 
