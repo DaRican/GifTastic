@@ -5,10 +5,9 @@ $(document).ready(function () {
     //Display the default buttons on the page
 
     for (var i = 0; i < cars.length; i++) {
-        var makeButtons =
-            $('<button').text(cars[i]).addClass('onLoadButtons');
-        makeButtons.attr("car-model", subject[i]);
-        $('#buttons').append(makeButtons);
+        var makeButtons = $('<button>').text(cars[i]).addClass('onLoadButtons');
+        makeButtons.attr("car-model", cars[i]);
+        $('#buttons-view').append(makeButtons);
     };
 
     $(".onLoadButtons").on('click', function () {
@@ -28,9 +27,10 @@ $(document).ready(function () {
 
                 var carPic = $('<img>');
                 carPic.attr("src", results[k].images.fixed_height_still.url);
-                carPic.attr("stateStill", results[k].images.fixed_height_still.url);
-                carPic.attr("stateAnimated", results[k].images.fixed_height.url)
+                carPic.attr("srcStill", results[k].images.fixed_height_still.url);
+                carPic.attr("srcAnimated", results[k].images.fixed_height.url)
                 carPic.attr("class", "pics");
+                carPic.attr("animateState", 'still');
 
                 picDiv.prepend(p);
                 picDiv.prepend(carPic);
@@ -44,7 +44,7 @@ $(document).ready(function () {
     $('#add-carModel').on("click", function () {
 
         event.preventDefault();
-        var carModelInput = $("#carModel-input").toLowerCase().val().trim();
+        var carModelInput = $("#carModel-input").val().trim().toLowerCase();
 
         var makeButtons = $('<button>').text(carModelInput);
         makeButtons.attr("car-model", carModelInput);
@@ -52,7 +52,26 @@ $(document).ready(function () {
         $('#allButtons').append(makeButtons);
         $('#carModel-input').empty();
 
+    });
+
+    $(document).on('click', ".pic", function () {
+
+        var state = $(this).attr("animateState");
+
+        if (state = "still") {
+            $(this).attr("src", $(this).attr("srcAnimated"));
+            console.log("State: " + state);
+            $(this).attr("animateState", "animated");
+        } else {
+            $(this).attr("src", $(this).attr("srcStill"));
+            console.log("State: " + state);
+            $(this).attr("animateState", "still");
+        }
+
+
     })
+
+
 
 })
 
